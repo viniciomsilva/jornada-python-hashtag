@@ -37,7 +37,7 @@ def power_up() -> None:
     sleep(TIME_SLEEP)
 
     auto.click(x=POSITIONS[0][0], y=POSITIONS[0][1])
-    auto.write("vinparaunity@gmail.com")
+    auto.write("test@test.com")
     auto.press("tab")
     auto.write("qwe123@")
     auto.press("tab")
@@ -48,7 +48,7 @@ def power_up() -> None:
     for row in dataframe.index:
         auto.click(x=POSITIONS[1][0], y=POSITIONS[1][1])
 
-        auto.write(dataframe.loc[1, "codigo"])
+        auto.write(dataframe.loc[row, "codigo"])
         auto.press("tab")
 
         auto.write(dataframe.loc[row, "marca"])
