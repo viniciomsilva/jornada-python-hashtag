@@ -1,1 +1,6 @@
+# data files
 *.csv
+/day_4_python_dev/api_key.txt
+
+# python cache
+__pycache__
