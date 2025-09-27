@@ -1,12 +1,3 @@
-# título
-# campo para input do usuário
-# a cada mensagem do usuário
-#   mostrar a mensagem do usuário no chat
-#   enviar a mensagem para a IA responder
-#   mostrar a resposta da IA no chat
-
-from os import getcwd, path
-
 import streamlit as st
 from openai import OpenAI
 
@@ -14,7 +5,7 @@ import openai_api_key
 
 
 client = OpenAI(
-    api_key=openai_api_key.get(path.join(getcwd(), "api_key.txt"))
+    api_key=openai_api_key.get()
 )
 
 st.write("## Python Dev | chatbot com IA")
