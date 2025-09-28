@@ -4,44 +4,58 @@ from openai import OpenAI
 import openai_api_key
 
 
-client = OpenAI(
-    api_key=openai_api_key.get()
-)
+def init_messages_historic() -> None:
+    st.session_state["messages"] = list[dict[str, str]]
+    st.session_state["messages"] = []
+    add_message({
+        "role": "assistant",
+        "content": "Olá! No que posso ajudar?"
+    })
 
-st.write("## Python Dev | chatbot com IA")
 
-# se não existir histórico de mensagens na sessão, cria o histórico de mensagens
-if not "messages_historic" in st.session_state:
-    st.session_state["messages_historic"] = []
+def show_messages() -> None:
+    for msg in st.session_state["messages"]:
+        st.chat_message(msg["role"]).write(msg["content"])
 
-# exibe as mensagens do histórico no chat
-for msg in st.session_state["messages_historic"]:
-    st.chat_message(msg["role"]).write(msg["content"])
 
-user_msg = st.chat_input("Mensagem...")
+def add_message(msg: dict[str, str]) -> None:
+    st.session_state["messages"].append(msg)
 
-if user_msg:
-    st.chat_message("user").write(user_msg)
-    # armazenar a mensagem do usuário no histórico
-    st.session_state["messages_historic"].append(
-        {
-            "role": "user",
-            "content": user_msg
-        }
-    )
 
-    # todo ~> pegar a resposta de IA
+def get_assistant_response(model: str = "gpt-4o") -> dict[str, str]:
     completion = client.chat.completions.create(
-        model="gpt-4o",
-        messages=st.session_state["messages_historic"]
+        model=model,
+        messages=st.session_state["messages"]
     )
-    assistant_msg = completion.choices[0].message.content
 
-    st.chat_message("assistant").write(assistant_msg)
-    # armazenar a resposta da IA no histórico
-    st.session_state["messages_historic"].append(
-        {
-            "role": "assistant",
-            "content": assistant_msg
-        }
-    )
+    return {
+        "role": "assistant",
+        "content": str(completion.choices[0].message.content)
+    }
+
+
+if __name__ == "__main__":
+    client = OpenAI(api_key=openai_api_key.get())
+
+    if not "messages" in st.session_state:
+        init_messages_historic()
+
+    st.set_page_config(page_title="Python Dev | Chatbot com IA")
+
+    show_messages()
+
+    user_msg_content = st.chat_input("Digite alguma coisa...")
+
+    if user_msg_content:
+        st.chat_message("user").write(user_msg_content)
+        add_message({
+            "role": "user",
+            "content": user_msg_content
+        })
+
+        assistant_response = get_assistant_response()
+        st.chat_message(
+            assistant_response["role"]).write(
+            assistant_response["content"]
+        )
+        add_message(assistant_response)
