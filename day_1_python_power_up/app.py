@@ -6,7 +6,7 @@ from automation import Automation
 
 if __name__ == "__main__":
     auto = Automation(
-        db_filepath=path.join(getcwd(), "databases", "products.csv")
+        db_filepath=path.join(getcwd(), "data", "products.csv")
     )
 
     auto.open_system(
