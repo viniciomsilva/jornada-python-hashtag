@@ -78,7 +78,7 @@ msg = {
 
 ## #5. About the Script
 
-````python
+```python
 # script app.py
 
 # initialize message history
@@ -135,5 +135,4 @@ if __name__ == "__main__":
         
         # add it to the history
         add_message(assistant_response)
-
 ```

@@ -1,4 +1,4 @@
-# 📊 Python Insights | Analyzing data with Python
+# 📊 Python Insights | Analyzing Data with Python
 
 You were hired by a company with over 800,000 customers for a data analysis
 project. Recently, this company realized that most of the customers in its
