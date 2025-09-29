@@ -1,6 +1,7 @@
 # 💪 Python Power Up
 
-The project automates the task of registering the products of the ` ../data/products.csv ` in the Python Journey system.
+The project automates the task of registering the products of the
+` ../data/products.csv ` in the Python Journey system.
 
 ## #1. Technologies Used
 
@@ -11,8 +12,8 @@ The project automates the task of registering the products of the ` ../data/prod
 pip install pandas pyautogui
 ```
 
-> NOTE: If the installation of all requirements by the ` requirements.txt ` has already been done file, no longer need
-> to install.
+> NOTE: If the installation of all requirements by the ` requirements.txt ` has
+> already been done file, no longer need to install.
 
 ## #2. Project Flow
 
@@ -23,7 +24,7 @@ pip install pandas pyautogui
    2. Login
 4. Start product registration until the end of the database
 
-## #3. About Scripts
+## #3. About the Script
 
 ```python
 # script automation.py

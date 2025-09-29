@@ -40,8 +40,10 @@ By Jupyter Notebook:
 2. View (understand) the database
 3. Correct the database ant prepare it for analysis
 4. See the actual number of cancellations
-5. Show the relationship between cancellations and other data in visual graphs *(how does other data directly impact cancellations?)*
-6. Implement viable solutions and show their numerical results in the number of cancellations
+5. Show the relationship between cancellations and other data in visual graphs
+   *(how does other data directly impact cancellations?)*
+6. Implement viable solutions and show their numerical results in the number of
+   cancellations
 
 ### #1 Flow | Import the Libs and Database
 
@@ -75,8 +77,10 @@ is irrelevant to the main analysis.
 
 **The initial data processing:**
 
-* The CustomerID column, being randomly generated data, does not influence the number of cancellations. Therefore, it has been removed
-* Indexes with empty data can interfere with the main analysis. Therefore, they were also eliminated
+* The CustomerID column, being randomly generated data, does not influence the
+  number of cancellations. Therefore, it has been removed
+* Indexes with empty data can interfere with the main analysis. Therefore, they
+  were also eliminated
 
 ```python
 df = df.drop(columns="CustomerID")  # delete "CustomerID" column
@@ -118,7 +122,8 @@ for column in df.columns:
 **Possible solutions:**
 
 1. Offer discounts on quarterly and annual plans
-2. Try to resolve the customer's problem before the fourth call to the call-center
+2. Try to resolve the customer's problem before the fourth call to the
+   call-center
 3. Charge the customer before the twenty days of delay
 
 **Implementing the solutions:**

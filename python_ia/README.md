@@ -58,15 +58,27 @@ path for Pandas.
 In AI projects, it's always best to train more than one model simultaneously for
 comparison and to select the best model without bias.
 
-**Libs:**  
+**Libs:**
 
 * Pandas: processes data from CSV files into a Python structure
 * Scikit Learn
-  * Label Encoder: treat non-numeric data as numeric, the only formats accepted by AI models ([see documentation](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html#sklearn.preprocessing.LabelEncoder))
-  * KNeighbors Classifier: AI model that classifies a customer's credit score based on customers with similar characteristics, their "neighbors" ([see documentation](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier))
-  * Random Forest Classifier: AI model that ranks customer scores based on random analysis of other customer information ([see documentation](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier))
-  * Train Test Split *Method*: a method that divides the database into training data and test data, which are then further divided into analysis data and template data ([see documentation](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split))
-  * Accuracy Score *Method*: a method that calculates the accuracy of the AI ​​model by comparing its response to the test analysis data with the test template ([see documentation](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html#sklearn.metrics.accuracy_score))
+  * Label Encoder: treat non-numeric data as numeric, the only formats accepted
+    by AI models
+    ([see documentation](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html#sklearn.preprocessing.LabelEncoder))
+  * KNeighbors Classifier: AI model that classifies a customer's credit score
+    based on customers with similar characteristics, their "neighbors"
+    ([see documentation](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier))
+  * Random Forest Classifier: AI model that ranks customer scores based on
+    random analysis of other customer information
+    ([see documentation](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier))
+  * Train Test Split *Method*: a method that divides the database into training
+    data and test data, which are then further divided into analysis data and
+    template data
+    ([see documentation](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split))
+  * Accuracy Score *Method*: a method that calculates the accuracy of the AI ​
+    ​model by comparing its response to the test analysis data with the test
+    template
+    ([see documentation](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html#sklearn.metrics.accuracy_score))
 
 ### #2 Prepare the Database for AI (Label Encoder)
 
@@ -117,8 +129,10 @@ and X and Y for testing. Thus, the following structure is obtained:
 
 * Training X: information that the AI ​​will use to predict the training Y values
 * Training Y: template information to train the AI's accuracy
-* Test X: information that, after training, will be used to determine the test Y values
-* Test Y: information to measure the AI ​​model's accuracy and determine the best model for the project
+* Test X: information that, after training, will be used to determine the test
+  Y values
+* Test Y: information to measure the AI ​​model's accuracy and determine the best
+  model for the project
 
 **Who X and Y Are?**
 
