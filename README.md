@@ -49,5 +49,5 @@ All data files should be located in the ` ./data/ ` folder at the project root.
   analysis.
 * Day #3 🧠 [Python IA](./python_ia/): AI-powered data analysis and customer
   credit score prediction.
-* Day #3 🤖 [Python Dev](./python_dev/): AI-powered chatbot from OpenAI.
+* Day #4 🤖 [Python Dev](./python_dev/): AI-powered chatbot from OpenAI.
   ChatGPT style.
